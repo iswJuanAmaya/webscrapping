@@ -38,12 +38,12 @@ def find_new_jobs(tree):
     """"""
     global df, source, today, words_to_look, file_name
     #obtiene los divs que envuelve a cada oportunidad
-    jobs = tree.xpath('')
+    jobs = tree.xpath('//div[contains(@id,"job_list_")]')
     print(f"{len(jobs)} trabajos encontrados")
 
     for job in jobs:
         #get the url of detail
-        detail_url = job.xpath('')[0]
+        detail_url = job.xpath('./div/div/p/a[contains(@href,"/jobs/")]/@href')[0]
 
         #looks if the detail url is already in the dataset
         if df['url_detail_id'][df['url_detail_id']==detail_url].any():
@@ -56,17 +56,21 @@ def find_new_jobs(tree):
             detail = get_page(detail_url)
 
             #get the title
-            title = get_by_xpath_and_clean(detail, '')
+            title = get_by_xpath_and_clean(detail, '//div[@class="content_header"]/h1/text()')
             #get the location
-            location = get_by_xpath_and_clean(detail, '', i=1)
+            location = get_by_xpath_and_clean(detail, '//h4[@class="primary_location"]/a/text()', i=1)
             #Opening Date:
-            opening_date = get_by_xpath_and_clean(detail, '')
+            opening_date = get_by_xpath_and_clean(detail, 
+                                '//label[contains(text(),"External Opening Date:")]/text()')\
+                                .replace('External Opening Date:','').strip()
             #Closing Date
-            closing_date = get_by_xpath_and_clean(detail,'')
+            closing_date = get_by_xpath_and_clean(detail, 
+                                '//label[contains(text(),"External Closing Date: ")]/text()')\
+                                .replace('External Closing Date:','').strip()
             
             #find the body of the job and look for the words_to_look to appear once at least
             is_alert = False
-            text_for_alert = ' '.join(detail.xpath('// /descendant::text()'))
+            text_for_alert = ' '.join(detail.xpath('//div[@class="job_description"]//descendant::text()'))
             text_for_alert = re.sub(r'[\n\t\xa0]', '', text_for_alert ).strip().lower()
             if any(word in text_for_alert for word in words_to_look):
                 is_alert = True
@@ -86,13 +90,24 @@ def main():
     global main_url, df, source, today, words_to_look, file_name
 
     words_to_look = [
-        
+        'salud',
+        'farmacoeconomía',
+        'medicamentos',
+        'health',
+        'pharmacoeconomics',
+        'medicines',
+        'santé',
+        'pharmacoéconomie',
+        'médicaments',
+        'saude',
+        'farmacoeconomia',
+        'medicamentos'
     ]
     
     today = date.today().strftime("%d/%m/%Y")
-    source = ''
-    file_name = './_ops.csv'
-    main_url = ''
+    source = 'IDB'
+    file_name = './idb_ops.csv'
+    main_url = 'https://iadbcareers.referrals.selectminds.com/'
 
     print("\nCargando el dataset de oportunidades guardadas...")
     df = load_csv(file_name)
