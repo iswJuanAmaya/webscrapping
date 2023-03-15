@@ -28,7 +28,7 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
     """"""
     try:
         text = tree.xpath(xpath)[i]
-        text = re.sub(r'[\n\t]', '', text).strip()
+        text = re.sub(r'[\n\t\xa0]', '', text).strip()
         return text
     except:
         return None

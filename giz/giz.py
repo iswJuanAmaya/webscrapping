@@ -52,7 +52,7 @@ def load_csv(file_name):
 
 def clean(text):
     try:
-        return re.sub(r'[\n\t]', '', text).strip()
+        return re.sub(r'[\n\t\xa0]', '', text).strip()
     except:
         return None
 
@@ -61,7 +61,7 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
     """"""
     try:
         text = tree.xpath(xpath)[i]
-        text = re.sub(r'[\n\t]', '', text).strip()
+        text = re.sub(r'[\n\t\xa0]', '', text).strip()
         return text
     except:
         return None
@@ -75,8 +75,8 @@ def find_new_jobs(tree):
     print(f"{len(jobs)} trabajos encontrados")
 
     for i, job in enumerate(jobs):
-        if i > 75:
-            break
+    #     if i > 75:
+    #         break
         #get the url of detail
         detail_url = job['MatchedObjectDescriptor']['PositionURI']
 
