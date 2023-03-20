@@ -139,6 +139,10 @@ def paginate():
 
 
 def main():
+    """
+    esta pagina es diferente, hace peticiones muy pesadas, por lo cual obté por usar selenium, 
+    primero se hace la paginacion con selenium y luego se hace el requests a cada detalle
+    """
     global main_url, df, source, today, words_to_look, file_name, driver
     words_to_look = [
         'salud',
@@ -153,8 +157,8 @@ def main():
         ]
 
     today = date.today().strftime("%d/%m/%Y")
-    source = 'unops'
-    file_name = './unops_ops.csv'
+    source = 'unops_interns'
+    file_name = '../oportunidades.csv'
     main_url = 'https://jobs.unops.org/Pages/ViewVacancy/InternshipListing.aspx'
     
     print("\nIniciando driver...")
