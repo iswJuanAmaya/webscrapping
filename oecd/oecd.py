@@ -60,9 +60,9 @@ def find_new_jobs(tree):
             #type RFQ
             type_RFQ = get_by_xpath_and_clean(job, './td[2]/text()')
             #get the title
-            title = get_by_xpath_and_clean(job, './td[4]/descendant::text()', i='join')
+            title = get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/text()')
             #get the location (type RFQ)
-            location = get_by_xpath_and_clean(job, './td[2]/text()')
+            location = 'N/A'
             #Opening Date:
             opening_date = get_by_xpath_and_clean(job, './td[5]/text()')
             #Closing Date
@@ -77,7 +77,7 @@ def find_new_jobs(tree):
             #add the new job to the dataset
             df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
-                    'is_alert': is_alert, 'source': source}, ignore_index=True)
+                    'is_alert': is_alert, 'source': source,'tipo':type_RFQ}, ignore_index=True)
 
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 
@@ -102,7 +102,7 @@ def main():
 
     today = date.today().strftime("%d/%m/%Y")
     source = 'OECD'
-    file_name = './oecd_ops.csv'
+    file_name = '../oportunidades.csv'
     main_url = 'https://www.oecd.org/callsfortenders/listofallcallsfortenders.htm'
 
     print("\nCargando el dataset de oportunidades guardadas...")
@@ -118,7 +118,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-"""Title es una concatenacion de todos,
-no voy a leer los pdfs como página de detalle
-rfq no entra dentro de la homologacion
-fechas no se homologan tmp"""

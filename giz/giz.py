@@ -75,8 +75,9 @@ def find_new_jobs(tree):
     print(f"{len(jobs)} trabajos encontrados")
 
     for i, job in enumerate(jobs):
-    #     if i > 75:
-    #         break
+        #para probar solo 50 oportunidades
+        if i > 50:
+            break
         #get the url of detail
         detail_url = job['MatchedObjectDescriptor']['PositionURI']
 
@@ -124,6 +125,12 @@ def find_new_jobs(tree):
 
 
 def main():
+    """
+    Esta página funciona con un request principal(que necesita headers y params) 
+    que devuelve un json con los links de las oportunidades con casi toda la 
+    informacion requerida, pero se visita cada link de detalle para obtener 
+    los camppos donde se busca la palabra clave.
+    """
     global main_url, df, source, today, words_to_look, file_name
     #must be all lowercase
     words_to_look = [
@@ -141,7 +148,7 @@ def main():
     
     today = date.today().strftime("%d/%m/%Y")
     source = 'GIZ'
-    file_name = './giz_ops.csv'
+    file_name = '../oportunidades.csv'
     main_url = 'https://api-giz.beesite.de/search/'
 
     print("\nCargando el dataset de oportunidades guardadas...")

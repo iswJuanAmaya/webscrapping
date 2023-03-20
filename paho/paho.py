@@ -111,7 +111,7 @@ def find_new_jobs(res):
                                 job['externalPath']
             detail = get_detail_page(json_detail_url)
 
-            id = job['bulletFields'][0]
+            #id = job['bulletFields'][0]
             #get the title
             title = job['title']
             #get the location
@@ -142,6 +142,9 @@ def find_new_jobs(res):
 
 
 def main():
+    """
+    esta pagina requiere headers y params para obtener la pagina principal y 
+    headers para la de detalle"""
     global main_url, df, source, today, words_to_look, file_name
 
     words_to_look = [
@@ -150,14 +153,14 @@ def main():
         'pharmacoeconomics',
         'health systems',
         'pharmacoéconomie',
-        'systèmes  de santé', 
+        'systèmes de santé', 
         'farmacoeconomia',
         'sistemas de saude'
     ]
 
     today = date.today().strftime("%d/%m/%Y")
     source = 'PAHO'
-    file_name = './paho_ops.csv'
+    file_name = '../oportunidades.csv'
     main_url = 'https://paho.wd5.myworkdayjobs.com/en-US/pahocareers'
 
     print("\nCargando el dataset de oportunidades guardadas...")

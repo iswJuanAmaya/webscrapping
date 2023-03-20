@@ -96,8 +96,7 @@ def find_new_jobs(tree):
         #if not  exist, get the detail
         else:
             print('nueva oportunidad encontrada')
-            #type RFQ
-            reference = get_by_xpath_and_clean(job, './td[2]/text()')
+            reference = get_by_xpath_and_clean(job, './/div[@data-description="Deadline"]/following-sibling::div[4]/span/text()')
             #get the title
             title = get_by_xpath_and_clean(job, './/span[@class="ungm-title ungm-title--small"]/text()')
             #type of opportunity
@@ -123,12 +122,17 @@ def find_new_jobs(tree):
             #add the new job to the dataset
             df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
-                    'is_alert': is_alert, 'source': source}, ignore_index=True)
+                    'is_alert': is_alert, 'source': source,'tipo':type_of_opportunity,
+                    'reference':reference}, ignore_index=True)
 
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 
 
 def main():
+    """
+    Esta pagina busca por el día, hace un solo requests que obtiene todos los jobs del día,
+    no hace requests por detalle.
+    """
     global main_url, df, source, today, words_to_look, file_name
 
     words_to_look = [
@@ -148,7 +152,7 @@ def main():
 
     today = date.today().strftime("%d/%m/%Y")
     source = 'ungm'
-    file_name = './ungm_ops.csv'
+    file_name = '../oportunidades.csv'
     main_url = 'https://www.ungm.org/Public/Notice'
 
     print("\nCargando el dataset de oportunidades guardadas...")
