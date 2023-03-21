@@ -16,6 +16,7 @@ import random
 
 def set_driver():
     global driver
+    print("inicializando driver")
     #set default options to driver
     chrome_options = Options()
     chrome_options.add_argument("--headless")

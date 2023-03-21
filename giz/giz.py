@@ -73,11 +73,9 @@ def find_new_jobs(tree):
     #obtiene los divs que envuelve a cada oportunidad
     jobs = tree['SearchResult']['SearchResultItems']
     print(f"{len(jobs)} trabajos encontrados")
-
+    counter = 0
     for i, job in enumerate(jobs):
-        #para probar solo 50 oportunidades
-        if i > 50:
-            break
+        
         #get the url of detail
         detail_url = job['MatchedObjectDescriptor']['PositionURI']
 
@@ -90,6 +88,7 @@ def find_new_jobs(tree):
         else:
             print('nueva oportunidad encontrada, obteniendo detalle...')
             detail_page = get_page(detail_url)
+            counter += 1
 
             #get the title
             title = clean(job['MatchedObjectDescriptor']['PositionTitle'])
@@ -116,6 +115,10 @@ def find_new_jobs(tree):
             df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
                     'is_alert':is_alert, 'source': source}, ignore_index=True)
+
+        if counter == 20:
+            print("20 jobs found, maximum reached, braking.")
+            break
 
     print("Storing the updated dataset...")
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
