@@ -71,7 +71,12 @@ def find_new_jobs(tree):
             #find the body of the job and look for the words_to_look to appear once at least
             is_alert = False
             text_for_alert = ' '.join(detail.xpath('//div[@class="job_description"]//descendant::text()'))
-            text_for_alert = re.sub(r'[\n\t\xa0]', '', text_for_alert ).split("Requirements")[0].strip().lower()
+            text_for_alert = re.sub(r'[\n\t\xa0]', '', text_for_alert ).strip().lower()
+            if "requirements" in text_for_alert:
+                text_for_alert = text_for_alert.split("requirements")[0]
+            elif "requisitos"  in text_for_alert:
+                text_for_alert = text_for_alert.split("requisitos")[0] 
+                
             if any(word in text_for_alert for word in words_to_look):
                 is_alert = True
 
