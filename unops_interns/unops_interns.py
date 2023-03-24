@@ -146,15 +146,15 @@ def main():
     """
     global main_url, df, source, today, words_to_look, file_name, driver
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos',
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos ',
         ]
 
     today = date.today().strftime("%d/%m/%Y")

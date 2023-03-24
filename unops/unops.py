@@ -142,20 +142,20 @@ def paginate():
 
 def main():
     """
-    esta pagina es diferente, hace peticiones muy pesadas, por lo cual obté por usar selenium, 
+    esta pagina es diferente, hace peticiones muy pesadas, por lo cual opté por usar selenium, 
     primero se hace la paginacion con selenium y luego se hace el requests a cada detalle
     """
     global main_url, df, source, today, words_to_look, file_name, driver
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos',
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos ',
         ]
 
     today = date.today().strftime("%d/%m/%Y")

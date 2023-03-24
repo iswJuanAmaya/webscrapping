@@ -35,7 +35,6 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
 
 
 def find_new_jobs(tree):
-    """"""
     global df, source, today, words_to_look, file_name
     #obtiene los divs que envuelve a cada oportunidad
     jobs = tree.xpath('//div[contains(@id,"job_list_")]')
@@ -92,21 +91,26 @@ def find_new_jobs(tree):
 
 
 def main():
+    """
+    Visita la página principal y luego la página de detalle
+    de ahí extrae la información y busca alguna keyword en el texto
+    hasta que encuentre la palabra Requirements o Requisitos
+    """
     global main_url, df, source, today, words_to_look, file_name
-
+    #el espacio es para que busca la palabra exacta, si puede detectar healthier como health
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'santé',
-        'pharmacoéconomie',
-        'médicaments',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos'
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' santé ',
+        ' pharmacoéconomie ',
+        ' médicaments ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos '
     ]
     
     today = date.today().strftime("%d/%m/%Y")

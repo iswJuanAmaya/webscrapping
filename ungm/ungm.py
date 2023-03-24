@@ -7,7 +7,7 @@ import time
 import random
 import re
 
-def get_page():
+def get_page(page):
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -33,7 +33,7 @@ def get_page():
     }
 
     json_data = {
-        'PageIndex': 0,
+        'PageIndex': page,
         'PageSize': 25,
         'Title': '',
         'Description': '',
@@ -130,25 +130,24 @@ def find_new_jobs(tree):
 
 def main():
     """
-    Esta pagina busca por el día, hace un solo requests que obtiene todos los jobs del día,
-    no hace requests por detalle.
+    Esta pagina busca por el día, 
+    hace un solo requests(a url no especial no main_url) que obtiene todos los 
+    jobs del día(requiere headers y params), no hace requests por detalle .
     """
     global main_url, df, source, today, words_to_look, file_name
-
+    #el espacio es para que busca la palabra exacta, si puede detectar healthier como health
+    #está usando las keywords de unops por mientras
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'santé ',
-        'pharmacoéconomie',
-        'médicaments',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos'
-    ]
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos ',
+        ]
 
     today = date.today().strftime("%d/%m/%Y")
     source = 'ungm'
@@ -159,9 +158,21 @@ def main():
     df = load_csv(file_name)
 
     print("\nObteniendo la pagina principal...")
-    tree = get_page()
+    tree = get_page(1)
     
     print("\nBuscando nuevas oportunidades...")
+    find_new_jobs(tree)
+
+    print("\nObteniendo pagina 2...")
+    tree = get_page(2)
+    
+    print("\nBuscando nuevas oportunidades. en pagina 2..")
+    find_new_jobs(tree)
+
+    print("\nObteniendo pagina 3...")
+    tree = get_page(3)
+    
+    print("\nBuscando nuevas oportunidades. en pagina 3..")
     find_new_jobs(tree)
 
 

@@ -143,19 +143,21 @@ def find_new_jobs(res):
 
 def main():
     """
-    esta pagina requiere headers y params para obtener la pagina principal y 
-    headers para la de detalle"""
+    no visita la url de la página, visita el endpoint que trae las oportunidades
+    son 2 endpoints, uno para la pagina principal y otro para la de detalle, además
+    esta pagina requiere headers y params en sus requests y retorna json
+    """
     global main_url, df, source, today, words_to_look, file_name
-
+    #el espacio es para que busca la palabra exacta, si puede detectar healthier como health
     words_to_look = [
-        'farmacoeconomía',
-        'sistema de salud',
-        'pharmacoeconomics',
-        'health systems',
-        'pharmacoéconomie',
-        'systèmes de santé', 
-        'farmacoeconomia',
-        'sistemas de saude'
+        ' farmacoeconomía ',
+        ' sistema de salud ',
+        ' pharmacoeconomics ',
+        ' health systems ',
+        ' pharmacoéconomie ',
+        ' systèmes de santé ', 
+        ' farmacoeconomia ',
+        ' sistemas de saude '
     ]
 
     today = date.today().strftime("%d/%m/%Y")

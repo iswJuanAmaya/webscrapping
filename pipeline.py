@@ -149,7 +149,7 @@ def main():
     """
     global sender, recipients, password, today, today_datetime, folders
     sender = "garciaamayajuancristobal.soft@gmail.com"
-    recipients = ["iswjuanamaya@gmail.com"]
+    recipients = ["iswjuanamaya@gmail.com","gustavo.gilramos@gmail.com"]
     password = "bfqqofvsrmtefbbo"
     today_datetime = date.today()
     today = date.today().strftime("%d/%m/%Y")
@@ -158,10 +158,10 @@ def main():
         "idb":"idb.py",
         "oecd":"oecd.py",
         "paho":"paho.py",
-        "ungm":"ungm.py"
-        # "unops":"unops.py",
-        # "unops_interns":"unops_interns.py"
-        # "wbg":"wbg.py",
+        "ungm":"ungm.py",
+        "unops":"unops.py",
+        "unops_interns":"unops_interns.py",
+        "wbg":"wbg.py"
         }
     
     #--// Corre todos los scrapers //--#

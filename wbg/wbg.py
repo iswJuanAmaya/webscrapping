@@ -77,8 +77,10 @@ def find_new_jobs(tree):
             text_for_alert = ( title + get_by_xpath_and_clean(detail_page, 
                                             '//div[@class="c14v1-body-text"]/descendant::text()', i='join')\
                             ).strip().lower()
+            
             if any(word in text_for_alert for word in words_to_look):
                 is_alert = True
+
             #add the new job to the dataset
             df = df.append({'url_detail_id': detail_url, 'scrapped_day': today, 'title': title, 
                     'opening_date': opening_date, 'closing_date': closing_date, 'reference':reference,
@@ -89,22 +91,23 @@ def find_new_jobs(tree):
 
 def main():
     """
+    obtiene la pagina principal via reques y visita la url de cada detalle
     """
     global main_url, df, source, today, words_to_look, file_name
 
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'santé', 
-        'pharmacoéconomie',
-        'médicaments',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos'
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' santé ', 
+        ' pharmacoéconomie ',
+        ' médicaments ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos '
         ]
 
     today = date.today().strftime("%d/%m/%Y")

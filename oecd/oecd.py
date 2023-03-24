@@ -83,21 +83,25 @@ def find_new_jobs(tree):
 
 
 def main():
+    """
+    visita la pagina principal y busca las nuevas oportunidades, 
+    no visita la url de detalle, las keword las busca solo en el titulo
+    """
     global main_url, df, source, today, words_to_look, file_name
-
+    #el espacio es para que busca la palabra exacta, si puede detectar healthier como health
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'santé ',
-        'pharmacoéconomie',
-        'médicaments',
-        'saude',
-        'farmacoeconomia',
-        'medicamentos'
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ', 
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' santé ',
+        ' pharmacoéconomie ',
+        ' médicaments ',
+        ' saude ',
+        ' farmacoeconomia ',
+        ' medicamentos '
     ]
 
     today = date.today().strftime("%d/%m/%Y")

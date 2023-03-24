@@ -75,7 +75,6 @@ def find_new_jobs(tree):
     print(f"{len(jobs)} trabajos encontrados")
     counter = 0
     for i, job in enumerate(jobs):
-        
         #get the url of detail
         detail_url = job['MatchedObjectDescriptor']['PositionURI']
 
@@ -116,8 +115,8 @@ def find_new_jobs(tree):
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
                     'is_alert':is_alert, 'source': source}, ignore_index=True)
 
-        if counter == 20:
-            print("20 jobs found, maximum reached, braking.")
+        if counter == 30:
+            print("30 jobs found, maximum reached, braking.")
             break
 
     print("Storing the updated dataset...")
@@ -131,22 +130,22 @@ def main():
     """
     Esta página funciona con un request principal(que necesita headers y params) 
     que devuelve un json con los links de las oportunidades con casi toda la 
-    informacion requerida, pero se visita cada link de detalle para obtener 
-    los camppos donde se busca la palabra clave.
+    informacion requerida, se visita cada link de detalle para obtener 
+    los campos donde se busca la palabra clave.
     """
     global main_url, df, source, today, words_to_look, file_name
-    #must be all lowercase
+    #el espacio es para que busca la palabra exacta, si puede detectar healthier como health
     words_to_look = [
-        'salud',
-        'farmacoeconomía',
-        'medicamentos',
-        'health',
-        'pharmacoeconomics',
-        'medicines',
-        'gesundheit',
-        'pharmakoökonomie',
-        'medikamente',
-        'gesundheitssystem',
+        ' salud ',
+        ' farmacoeconomía ',
+        ' medicamentos ',
+        ' health ',
+        ' pharmacoeconomics ',
+        ' medicines ',
+        ' gesundheit ',
+        ' pharmakoökonomie ',
+        ' medikamente ',
+        ' gesundheitssystem ',
     ]
     
     today = date.today().strftime("%d/%m/%Y")
