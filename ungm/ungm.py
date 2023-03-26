@@ -38,9 +38,9 @@ def get_page(page):
         'Title': '',
         'Description': '',
         'Reference': '',
-        'PublishedFrom': hoy,
+        'PublishedFrom': '',
         'PublishedTo': hoy,
-        'DeadlineFrom': '',
+        'DeadlineFrom': hoy,
         'DeadlineTo': '',
         'Countries': [],
         'Agencies': [],
@@ -84,6 +84,7 @@ def find_new_jobs(tree):
     jobs = tree.xpath('//div[@role="row"]')
     print(f"{len(jobs)} trabajos encontrados")
 
+    nuevas_ops = 0
     for job in jobs:
         #get the url of detail
         detail_url = main_url + '/' + get_by_xpath_and_clean(job,'./@data-noticeid')
@@ -124,8 +125,11 @@ def find_new_jobs(tree):
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
                     'is_alert': is_alert, 'source': source,'tipo':type_of_opportunity,
                     'reference':reference}, ignore_index=True)
+            
+            nuevas_ops += 1
 
-    df.to_csv(file_name, index=False, encoding='utf-8', header=True)
+    return nuevas_ops 
+    
 
 
 def main():
@@ -157,23 +161,21 @@ def main():
     print("\nCargando el dataset de oportunidades guardadas...")
     df = load_csv(file_name)
 
-    print("\nObteniendo la pagina principal...")
-    tree = get_page(1)
-    
-    print("\nBuscando nuevas oportunidades...")
-    find_new_jobs(tree)
+    #paginacion/ infinite scroll down simulation
+    for page in range(0, 6):
+        print(f"Obteniendo pagina {page}...")
+        tree = get_page(page)
+        
+        print(f"\nBuscando nuevas oportunidades. en pagina {page}..")
+        nuevas_ops = find_new_jobs(tree)
 
-    print("\nObteniendo pagina 2...")
-    tree = get_page(2)
+        if nuevas_ops > 10:
+            print(f"Se encontraron {nuevas_ops} nuevas oportunidades en la pagina {page} se hará un scroll más")
+        else:
+            print(f"Se encontraron {nuevas_ops} nuevas oportunidades en la pagina {page} se terminará el scroll")
+            break
     
-    print("\nBuscando nuevas oportunidades. en pagina 2..")
-    find_new_jobs(tree)
-
-    print("\nObteniendo pagina 3...")
-    tree = get_page(3)
-    
-    print("\nBuscando nuevas oportunidades. en pagina 3..")
-    find_new_jobs(tree)
+    df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 
 
 if __name__ == "__main__":
