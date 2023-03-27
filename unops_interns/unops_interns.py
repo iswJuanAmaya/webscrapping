@@ -181,7 +181,7 @@ def main():
         ]
 
     today = date.today().strftime("%d/%m/%Y")
-    source = 'unops_interns'
+    source = 'unops'
     file_name = '../oportunidades.csv'
     main_url = 'https://jobs.unops.org/Pages/ViewVacancy/InternshipListing.aspx'
     

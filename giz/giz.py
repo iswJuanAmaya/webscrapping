@@ -27,7 +27,7 @@ def get_page(url:str) -> html:
 #special function to perform the first request
 def get_main_page(main_url:str)->dict:
     """this is a special requests that brings
-        all the jobs in the page
+    all the jobs in the page
     """
     headers = {
         'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -52,8 +52,9 @@ def get_main_page(main_url:str)->dict:
     response = requests.get(main_url, params=params, headers=headers)
     return response.json()
 
-#lee la tabla de la pagina
+
 def load_csv(file_name:str) -> pd.DataFrame:
+    #lee la tabla de la pagina
     return pd.read_csv(file_name, encoding='utf-8')
 
 
