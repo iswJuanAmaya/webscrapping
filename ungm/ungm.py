@@ -7,7 +7,11 @@ import time
 import random
 import re
 
-def get_page(page):
+def get_page(page: int)->html:
+    """
+    this function makes the requests to the @url and returns the 
+    parsed html tree. wait a random time first to avoid being blocked
+    """
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -31,10 +35,12 @@ def get_page(page):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest',
     }
-
+    
+    """depending on @page is the number of page will be requested
+    the first page is 0, the second is 1, etc, then also the date is required."""
     json_data = {
         'PageIndex': page,
-        'PageSize': 25,
+        'PageSize': 15,
         'Title': '',
         'Description': '',
         'Reference': '',
@@ -54,21 +60,24 @@ def get_page(page):
         'NoticeSearchTotalLabelId': 'noticeSearchTotal',
         'TypeOfCompetitions': [],
     }
+    
     print(f"pidiendo jobs para el día: {hoy}")
     #hace el requests
-    page = requests.post('https://www.ungm.org/Public/Notice/Search',  
+    page_resp = requests.post('https://www.ungm.org/Public/Notice/Search',  
                         headers=headers, json=json_data)
-    tree = html.fromstring(page.content)
+    
+    tree = html.fromstring(page_resp.content)
     return tree
 
 
-def load_csv(file_name):
+def load_csv(file_name:str) -> pd.DataFrame:
     #lee la tabla de la pagina
     return pd.read_csv(file_name, encoding='utf-8')
 
 
-def get_by_xpath_and_clean(tree, xpath, i=0):
-    """"""
+def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
+    """ this function gets the text from @tree via @xpath in the @i index and 
+    cleans it from \n, \t and \xa0 """
     try:
         text = tree.xpath(xpath)[i]
         text = re.sub(r'[\n\t]', '', text).strip()
@@ -77,8 +86,9 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
         return None
 
 
-def find_new_jobs(tree):
-    """"""
+def find_new_jobs(tree:html)->int:
+    """given @tree, this function looks for new jobs and adds them to the dataset,
+    also return how many NEW jobs were found"""
     global df, source, today, words_to_look, file_name
     #obtiene los divs que envuelve a cada oportunidad
     jobs = tree.xpath('//div[@role="row"]')
@@ -86,6 +96,11 @@ def find_new_jobs(tree):
 
     nuevas_ops = 0
     for job in jobs:
+        """
+        for each job, get the detail and add it to the dataset,
+        also looks fot the words_to_look in the detail to see if 
+        it is an alert
+        """
         #get the url of detail
         detail_url = main_url + '/' + get_by_xpath_and_clean(job,'./@data-noticeid')
         
@@ -129,7 +144,6 @@ def find_new_jobs(tree):
             nuevas_ops += 1
 
     return nuevas_ops 
-    
 
 
 def main():
@@ -163,6 +177,11 @@ def main():
 
     #paginacion/ infinite scroll down simulation
     for page in range(0, 6):
+        """ iterates from page 0 to page 5,
+        each page has to return a maximum of 15 jobs,
+        if it returns less than 10 NEW jobs, it means that 
+        it is the last page, and the pagination is over.
+        """
         print(f"Obteniendo pagina {page}...")
         tree = get_page(page)
         

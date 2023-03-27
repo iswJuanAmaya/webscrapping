@@ -13,20 +13,30 @@ from datetime import date
 import re
 import random
 
+
 def set_driver():
+    """Initialize a webdriver to simulate chrome browser"""
+
     global driver
-    print("inicializando driver")
-    #set default options to driver
+
+    #setea configuraciones por defecto para el driver
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1024,768")
-    # chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
+    # chrome_options.add_argument("--disable-gpu")
     # chrome_options.add_argument("--disable-dev-shm-usage")
+
+    print("inicializando driver")
     driver = webdriver.Chrome(options=chrome_options, executable_path='C:\\chromedriver.exe')
 
 
-def get_page(url):
+def get_page(url: str) -> html:
+    """
+    this function makes the requests to the @url and returns the 
+    parsed html tree. as this function is used algo to get the detail
+    waith a random time first to avoid being blocked
+    """
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -38,13 +48,15 @@ def get_page(url):
     return tree
 
 
-def load_csv(file_name):
+def load_csv(file_name:str) -> pd.DataFrame:
     #lee la tabla de la pagina
     return pd.read_csv(file_name, encoding='utf-8')
 
 
-def get_by_xpath_and_clean(tree, xpath, i=0):
-    """"""
+def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
+    """ this function gets the text from @tree via @xpath in the @i index and 
+    cleans it from \n, \t and \xa0, and returns the text. if @i is 'join' it
+    returns the text of all the elements in the xpath joined by a space"""
     try:
         if i=='join':
             text = tree.xpath(xpath)
@@ -58,13 +70,17 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
         return None
 
 
-def find_new_jobs(links):
-    """"""
+def find_new_jobs(links:list):
+    """given @link, this function looks for new jobs and adds them to the dataset"""
+
     global df, source, today, words_to_look, file_name
 
     for i, link in enumerate(links):
-        if i>15:
-            break
+        """
+        for each job, get the detail and add it to the dataset,
+        also looks fot the words_to_look in the detail to see if 
+        it is an alert
+        """
         #get the url of detail
         detail_url = link
         
@@ -97,6 +113,7 @@ def find_new_jobs(links):
             #text for search
             text_for_alert = title + get_by_xpath_and_clean(detail_page, 
                 '(//span[@class="longTextDescription"])[1]//descendant::text()', i='join')
+            
             if any(word in text_for_alert for word in words_to_look):
                 is_alert = True
                 
@@ -108,19 +125,25 @@ def find_new_jobs(links):
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 
 
-def paginate():
+def paginate() -> list:
+    """this function paginates the main page and gets all the links of the detail pages
+    close de driver when finished and return the list of links"""
+
     global driver, main_url
+
     print(f"entrando a la pagina principal: {main_url}")
     driver.get(main_url)
-    rdm = random.randint(3, 6)
-    time.sleep(rdm)
+    time.sleep( random.randint(3, 6) )
 
+    #hace scroll hasta el componenete de paginacion
     print("buscando el boton de paginacion con scroll")
     footer = driver.find_element(By.XPATH, '//div[@class="footer-nav"]')
     ActionChains(driver).scroll_to_element(footer).perform()
 
     links = [link.get_attribute('href') for link in 
              driver.find_elements(By.XPATH, '//a[contains(@href,"id")]')]
+    
+    #paginacion
     while True:
         try:
             print("-----next page-----")

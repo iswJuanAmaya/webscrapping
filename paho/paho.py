@@ -7,7 +7,11 @@ import time
 import random
 import re
 
-def get_main_page():
+def get_main_page() -> dict:
+    """
+    this function makes the requests to specific url and returns the 
+    parsed response as json.
+    """
     headers = {
         'Accept': 'application/json',
         'Accept-Language': 'en-US',
@@ -41,7 +45,11 @@ def get_main_page():
     return response.json()
 
 
-def get_detail_page(url):
+def get_detail_page(url:str)-> dict:
+    """
+    this function makes the requests to @url and returns the 
+    parsed response as json.  wait a random time first to avoid being blocked
+    """
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -73,12 +81,12 @@ def get_detail_page(url):
     return response.json()
 
 
-def load_csv(file_name):
+def load_csv(file_name:str) -> pd.DataFrame:
     #lee la tabla de la pagina
     return pd.read_csv(file_name, encoding='utf-8')
 
 
-def get_by_xpath_and_clean(tree, xpath, i=0):
+def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
     """"""
     try:
         text = tree.xpath(xpath)[i]
@@ -88,14 +96,22 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
         return None
 
 
-def find_new_jobs(res):
-    """"""
+def find_new_jobs(res:dict):
+    """given @res, this function looks for new jobs and adds them to the dataset"""
+
     global df, source, today, words_to_look, file_name, main_url
+
     #obtiene los divs que envuelve a cada oportunidad
     jobs = res['jobPostings']
+
     print(f"{len(jobs)} trabajos encontrados")
 
     for job in jobs:
+        """
+        for each job, get the detail and add it to the dataset,
+        also looks fot the words_to_look in the detail to see if 
+        it is an alert
+        """
         #get the url of detail
         detail_url = main_url + '/details/' + job['externalPath'].rsplit('/', 1)[1]
 
@@ -136,9 +152,6 @@ def find_new_jobs(res):
                     'is_alert':is_alert, 'source': source}, ignore_index=True)
 
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
-
-
-
 
 
 def main():

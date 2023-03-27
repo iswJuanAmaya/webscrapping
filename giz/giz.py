@@ -7,7 +7,12 @@ import time
 import random
 import re
 
-def get_page(url):
+def get_page(url:str) -> html:
+    """
+    this function makes the requests to the @url and returns the 
+    parsed html tree. as this function is used algo to get the detail
+    wait a random time first to avoid being blocked
+    """
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -18,10 +23,12 @@ def get_page(url):
     tree = html.fromstring(page.content)
     return tree
 
+
 #special function to perform the first request
-def get_main_page(main_url):
+def get_main_page(main_url:str)->dict:
     """this is a special requests that brings
-    all the jobs in the page"""
+        all the jobs in the page
+    """
     headers = {
         'Accept': 'application/json, text/javascript, */*; q=0.01',
         'Accept-Language': 'es-419,es;q=0.9,es-MX;q=0.8,en;q=0.7',
@@ -37,6 +44,7 @@ def get_main_page(main_url):
         'sec-ch-ua-platform': '"Windows"',
     }
 
+    #los paramertros definene cuantas oportunidades trae y que propiedades.
     params = {
         'data': '{"LanguageCode":"EN","SearchParameters":{"FirstItem":1,"CountItem":10000,"Sort":[{"Criterion":"PublicationStartDate","Direction":"DESC"}],"MatchedObjectDescriptor":["ID","PositionTitle","PositionURI","PositionShortURI","PositionLocation.CountryName","PositionLocation.CityName","PositionLocation.Longitude","PositionLocation.Latitude","PositionLocation.PostalCode","PositionLocation.StreetName","PositionLocation.BuildingNumber","PositionLocation.Distance","JobCategory.Name","PublicationStartDate","PublicationEndDate","ParentOrganizationName","OrganizationShortName","CareerLevel.Name","JobSector.Name","PositionIndustry.Name","PublicationCode"]},"SearchCriteria":[{"CriterionName":"PublicationChannel.Code","CriterionValue":["12"]}]}',
     }
@@ -44,21 +52,22 @@ def get_main_page(main_url):
     response = requests.get(main_url, params=params, headers=headers)
     return response.json()
 
-
-def load_csv(file_name):
-    #lee la tabla de la pagina
+#lee la tabla de la pagina
+def load_csv(file_name:str) -> pd.DataFrame:
     return pd.read_csv(file_name, encoding='utf-8')
 
 
-def clean(text):
+def clean(text:str) -> str:
+    """this function cleans the @text from \n, \t and \xa0"""
     try:
         return re.sub(r'[\n\t\xa0]', '', text).strip()
     except:
         return None
 
 
-def get_by_xpath_and_clean(tree, xpath, i=0):
-    """"""
+def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
+    """ this function gets the text from @tree via @xpath in the @i index and 
+    cleans it from \n, \t and \xa0 """
     try:
         text = tree.xpath(xpath)[i]
         text = re.sub(r'[\n\t\xa0]', '', text).strip()
@@ -67,14 +76,20 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
         return None
 
 
-def find_new_jobs(tree):
-    """"""
+def find_new_jobs(tree:html):
+    """given @tree, this function looks for new jobs and adds them to the dataset"""
+
     global df, source, today, words_to_look, file_name
     #obtiene los divs que envuelve a cada oportunidad
     jobs = tree['SearchResult']['SearchResultItems']
     print(f"{len(jobs)} trabajos encontrados")
     counter = 0
     for i, job in enumerate(jobs):
+        """
+        for each job, get the detail and add it to the dataset,
+        also looks fot the words_to_look in the detail to see if 
+        it is an alert
+        """
         #get the url of detail
         detail_url = job['MatchedObjectDescriptor']['PositionURI']
 
@@ -114,16 +129,14 @@ def find_new_jobs(tree):
             df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
                     'opening_date': opening_date, 'closing_date': closing_date,'location': location,
                     'is_alert':is_alert, 'source': source}, ignore_index=True)
-
+            
+        #esto es para evitar hacer más de 30 requests, ya que la pagina nos puede bloquear
         if counter == 30:
             print("30 jobs found, maximum reached, braking.")
             break
 
     print("Storing the updated dataset...")
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
-
-
-
 
 
 def main():

@@ -7,7 +7,12 @@ import time
 import random
 import re
 
-def get_page(url):
+def get_page(url:str) -> html:
+    """
+    this function makes the requests to the @url and returns the 
+    parsed html tree. as this function is used algo to get the detail
+    waith a random time first to avoid being blocked
+    """
     #genera un random para dormir entre 4 y 12 segundos antes de hacer el requests
     rdm = random.randint(4, 12)
     print(f"dormirá por {rdm} segundos antes del requests")
@@ -19,13 +24,14 @@ def get_page(url):
     return tree
 
 
-def load_csv(file_name):
+def load_csv(file_name:str) -> pd.DataFrame:
     #lee la tabla de la pagina
     return pd.read_csv(file_name, encoding='utf-8')
 
 
-def get_by_xpath_and_clean(tree, xpath, i=0):
-    """"""
+def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
+    """ this function gets the text from @tree via @xpath in the @i index and 
+    cleans it from \n, \t and \xa0 """
     try:
         text = tree.xpath(xpath)[i]
         text = re.sub(r'[\n\t\xa0]', '', text).strip()
@@ -35,12 +41,21 @@ def get_by_xpath_and_clean(tree, xpath, i=0):
 
 
 def find_new_jobs(tree):
+    """given @tree, this function looks for new jobs and adds them to the dataset"""
+
     global df, source, today, words_to_look, file_name
+
     #obtiene los divs que envuelve a cada oportunidad
     jobs = tree.xpath('//div[contains(@id,"job_list_")]')
+
     print(f"{len(jobs)} trabajos encontrados")
 
     for job in jobs:
+        """
+        for each job, get the detail and add it to the dataset,
+        also looks fot the words_to_look in the detail to see if 
+        it is an alert
+        """
         #get the url of detail
         detail_url = job.xpath('./div/div/p/a[contains(@href,"/jobs/")]/@href')[0]
 

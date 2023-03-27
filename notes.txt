@@ -1,4 +1,22 @@
 Alertas TI Salud
 oportunidadestis@gmail.com
-assword: OportunidadesInternacionaleTISalud
+password: OportunidadesInternacionaleTISalud
 
+next steps:
+
+-Afinar detalles y mandar manualmente y vigilar alertas y ajustar si es necesario.
+
+-crear correo para enviar alertas, y activarle two steps verification.
+
+-documentación(mía, Nahomi)
+
+next next steps:
+
+-EC2(servidor, montar arquitectura, la bdd es perdible 100%, un repositorio)
+
+-posibles iteraciones de maduracion de MVP
+
+
+40-70% -> sobreesfuerzo
+1) página de detalle(40-60%) 
+2) duplicado de unops(10-20%), UNGM(5%), proyeccion incorrecta (10-20%)
