@@ -24,25 +24,41 @@ def send_email(subject, body, sender, recipients, password):
 
 
 def generate_body(nuevas_alertas):
-    html = """
-        <html>
-        <head></head>
-        <body>
-            <p>Se encontraron nuevas oportunidades!!::<br><br>
-        """
+    """"""
 
-    for index, row in nuevas_alertas.iterrows():
-        detail_url = row['url_detail_id'] 
-        title = row['title'][0:85] + "..." 
-        html += f"""
-        <a href="{detail_url}">{title}</a><br>
-        """
+    html = """
+    <html>
+    <head></head>
+    <body>
+        <h2>Se encontraron nuevas oportunidades!!::</h2>
+    """
+
+    # iterate over each group
+    for group_name, df_group in nuevas_alertas.groupby('source'):
+        """"""
+        html += f"<h3>{group_name}</h3>"
+        i = 1
+        for row_index, row in df_group.iterrows():
+            detail_url = row['url_detail_id'] 
+            title = row['title'][0:85] + "..." 
+            location = row['location'] if row['location'] else False
+            op_date = row['opening_date']
+            cl_date = row['closing_date']
+
+            html += f"{i}. <a href='{detail_url}'>{title}</a><br>"
+            
+            html += f"Deadline: {cl_date}<br>" if cl_date else ""
+            html += f"Fecha de publicacion: {op_date}<br>" if op_date else ""
+            html += f"Ubicación: {location}<br><br>" if location else "<br><br>"
+
+            i+=1
 
     html += """
         </p>
         </body>
         </html>
         """
+    
     return html
 
 
@@ -53,10 +69,11 @@ def generate_df_to_fill_body(df, tipo):
 
     if tipo == "diario":
         #selecciona las oportunidades escrapeadas hoy y que tengan alerta
-        nuevas_alertas = df[['url_detail_id','title']]\
+        nuevas_alertas = df[['url_detail_id','title','source','location','opening_date','closing_date']]\
                             [
                                 (df['scrapped_day'] == today) & (df['is_alert'] == True) 
                             ]
+        
         #selecciona las oportunidades escrapeadas hoy
         nuevas_oportunidades = df[['url_detail_id','title']]\
                                 [
