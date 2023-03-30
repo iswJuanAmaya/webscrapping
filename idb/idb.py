@@ -56,48 +56,57 @@ def find_new_jobs(tree):
         also looks fot the words_to_look in the detail to see if 
         it is an alert
         """
-        #get the url of detail
-        detail_url = job.xpath('./div/div/p/a[contains(@href,"/jobs/")]/@href')[0]
-
-        #looks if the detail url is already in the dataset
-        if df['url_detail_id'][df['url_detail_id']==detail_url].any():
-            print('this job is already in the dataset')
+        try:
+            #get the url of detail
+            detail_url = job.xpath('./div/div/p/a[contains(@href,"/jobs/")]/@href')[0]
+        except Exception as e:
+            print(f"fallo obteniendo el url del detalle con error: \n {e}")
             continue
+        
+        try:
+            #looks if the detail url is already in the dataset
+            if df['url_detail_id'][df['url_detail_id']==detail_url].any():
+                print('this job is already in the dataset')
+                continue
 
-        #if not  exist, get the detail
-        else:
-            print('nueva oportunidad encontrada, obteniendo detalle...')
-            detail = get_page(detail_url)
+            #if not  exist, get the detail
+            else:
+                print('nueva oportunidad encontrada, obteniendo detalle...')
+                detail = get_page(detail_url)
 
-            #get the title
-            title = get_by_xpath_and_clean(detail, '//div[@class="content_header"]/h1/text()')
-            #get the location
-            location = get_by_xpath_and_clean(detail, '//h4[@class="primary_location"]/a/text()', i=1)
-            #Opening Date:
-            opening_date = get_by_xpath_and_clean(detail, 
-                                '//label[contains(text(),"External Opening Date:")]/text()')\
-                                .replace('External Opening Date:','').strip()
-            #Closing Date
-            closing_date = get_by_xpath_and_clean(detail, 
-                                '//label[contains(text(),"External Closing Date: ")]/text()')\
-                                .replace('External Closing Date:','').strip()
-            
-            #find the body of the job and look for the words_to_look to appear once at least
-            is_alert = False
-            text_for_alert = ' '.join(detail.xpath('//div[@class="job_description"]//descendant::text()'))
-            text_for_alert = re.sub(r'[\n\t\xa0]', '', text_for_alert ).strip().lower()
-            if "requirements" in text_for_alert:
-                text_for_alert = text_for_alert.split("requirements")[0]
-            elif "requisitos"  in text_for_alert:
-                text_for_alert = text_for_alert.split("requisitos")[0] 
+                #get the title
+                title = get_by_xpath_and_clean(detail, '//div[@class="content_header"]/h1/text()')
+                #get the location
+                location = get_by_xpath_and_clean(detail, '//h4[@class="primary_location"]/a/text()', i=1)
+                #Opening Date:
+                opening_date = get_by_xpath_and_clean(detail, 
+                                    '//label[contains(text(),"External Opening Date:")]/text()')\
+                                    .replace('External Opening Date:','').strip()
+                #Closing Date
+                closing_date = get_by_xpath_and_clean(detail, 
+                                    '//label[contains(text(),"External Closing Date: ")]/text()')\
+                                    .replace('External Closing Date:','').strip()
                 
-            if any(word in text_for_alert for word in words_to_look):
-                is_alert = True
+                #find the body of the job and look for the words_to_look to appear once at least
+                is_alert = False
+                text_for_alert = ' '.join(detail.xpath('//div[@class="job_description"]//descendant::text()'))
+                text_for_alert = re.sub(r'[\n\t\xa0]', '', text_for_alert ).strip().lower()
+                if "requirements" in text_for_alert:
+                    text_for_alert = text_for_alert.split("requirements")[0]
+                elif "requisitos"  in text_for_alert:
+                    text_for_alert = text_for_alert.split("requisitos")[0] 
+                    
+                if any(word in text_for_alert for word in words_to_look):
+                    is_alert = True
 
-            #add the new job to the dataset
-            df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
-                    'opening_date': opening_date, 'closing_date': closing_date,'location': location,
-                    'is_alert':is_alert, 'source': source}, ignore_index=True)
+                #add the new job to the dataset
+                df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
+                        'opening_date': opening_date, 'closing_date': closing_date,'location': location,
+                        'is_alert':is_alert, 'source': source}, ignore_index=True)
+                
+        except Exception as e:
+            print(f"fallo obteniendo oportunidad {detail_url} con error: \n {e}")
+            continue
 
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 

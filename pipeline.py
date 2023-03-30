@@ -23,7 +23,7 @@ def send_email(subject, body, sender, recipients, password):
     smtp_server.quit()
 
 
-def generate_body(nuevas_alertas:pd.DataFrame)->str:
+def generate_body(nuevas_alertas:pd.DataFrame, msg:str)->str:
     """ recibe un dataframe filtrado con las alertas correspondientes,
     las itera y construlle un html con las alertas que servirá 
     como cuerpo del correo. eg:
@@ -63,11 +63,11 @@ def generate_body(nuevas_alertas:pd.DataFrame)->str:
         'ungm':'Naciones Unidas'
     }
 
-    html = """
+    html = f"""
     <html>
     <head></head>
     <body>
-        <h2>¡Tienes nuevas oportunidades!:</h2>
+        <h2>{msg}</h2>
     """
 
     #itera sobre cada grupo de organizaciones
@@ -129,11 +129,11 @@ def generate_df_to_fill_body(df:pd.DataFrame, tipo:str) -> pd.DataFrame:
                                     (df['scrapped_day'] == today)
                                 ]
         
-        print(f""" {len(nuevas_alertas)} \
-            alertas detectadas en {len(nuevas_oportunidades)} oportunidades nuevas """
-            )
-        
-        return nuevas_alertas
+        msg = f""" {len(nuevas_alertas)} \
+            alertas detectadas en {len(nuevas_oportunidades)} oportunidades minadas"""
+            
+        print(msg)
+        return nuevas_alertas, msg
     
     elif tipo == "semanal":
 
@@ -149,7 +149,7 @@ def generate_df_to_fill_body(df:pd.DataFrame, tipo:str) -> pd.DataFrame:
             ]
         
         #selecciona las oportunidades escrapeadas sabado, domingo y lunes y que tengan alerta
-        nuevas_alertas = df[['url_detail_id','title']]\
+        nuevas_alertas = df[['url_detail_id','title','source','location','opening_date','closing_date']]\
             [
                 (df['scrapped_day'].isin(fechas_semanales)) & (df['is_alert'] == True)
             ]
@@ -160,11 +160,12 @@ def generate_df_to_fill_body(df:pd.DataFrame, tipo:str) -> pd.DataFrame:
                                     (df['scrapped_day'].isin(fechas_semanales)) 
                                 ]
         
-        print(f""" {len(nuevas_alertas)} \
-            alertas detectadas en {len(nuevas_oportunidades)} oportunidades nuevas """
-            )
+        msg = f""" {len(nuevas_alertas)} \
+            alertas detectadas en {len(nuevas_oportunidades)} oportunidades minadas"""
+            
+        print(msg)
         
-        return nuevas_alertas
+        return nuevas_alertas, msg
     
     elif tipo == "lunes":
 
@@ -176,7 +177,7 @@ def generate_df_to_fill_body(df:pd.DataFrame, tipo:str) -> pd.DataFrame:
             ]
         
         #selecciona las oportunidades escrapeadas sabado, domingo y lunes y que tengan alerta
-        nuevas_alertas = df[['url_detail_id','title']]\
+        nuevas_alertas = df[['url_detail_id','title','source','location','opening_date','closing_date']]\
             [
                 (df['scrapped_day'].isin(sab_dom_lun)) & (df['is_alert'] == True)
             ]
@@ -187,11 +188,12 @@ def generate_df_to_fill_body(df:pd.DataFrame, tipo:str) -> pd.DataFrame:
                                     (df['scrapped_day'].isin(sab_dom_lun)) 
                                 ]
         
-        print(f""" {len(nuevas_alertas)} \
-            alertas detectadas en {len(nuevas_oportunidades)} oportunidades nuevas """
-            )
+        msg = f""" {len(nuevas_alertas)} \
+            alertas detectadas en {len(nuevas_oportunidades)} oportunidades minadas"""
+            
+        print(msg)
         
-        return nuevas_alertas
+        return nuevas_alertas, msg
 
 
 def correr_scrapers():
@@ -221,9 +223,9 @@ def main():
     
     """
     global sender, recipients, password, today, today_datetime, folders
-    sender = "garciaamayajuancristobal.soft@gmail.com"
-    recipients = ["iswjuanamaya@gmail.com","gustavo.gilramos@gmail.com"]
-    password = "bfqqofvsrmtefbbo"
+    sender = "alquimiadigital23@gmail.com"
+    recipients = ["iswjuanamaya@gmail.com", "gustavo.gilramos@gmail.com", "dss.tisalud@gmail.com"]#
+    password = "pyfiewjrnjmqtrnl" 
     today_datetime = date.today()
     today = date.today().strftime("%d/%m/%Y")
     folders = {
@@ -239,7 +241,7 @@ def main():
     
     #--// Corre todos los scrapers //--#
     # 1) itera sobre el diccionario folders, toma la llave como la carpeta, se mueve a ella, ejecuta el script y vuelve a la carpeta raiz
-    correr_scrapers()
+    #correr_scrapers()
 
     #--// Empieza el algoritmo de generacion de alertas y envió de correos //--#
     # 2) corre el script de generacion y envio de alertas
@@ -253,12 +255,12 @@ def main():
     if today_datetime.weekday() in [1,2,3,4]:
 
         print("Generando dataFrame con las alertas diarias")
-        nuevas_alertas = generate_df_to_fill_body(df, "diario")
+        nuevas_alertas, msg = generate_df_to_fill_body(df, "diario")
 
         cant_alertas = len(nuevas_alertas)
         if cant_alertas > 0:
             print(f"enviando {cant_alertas} alertas")
-            body_html = generate_body(nuevas_alertas)
+            body_html = generate_body(nuevas_alertas, msg)
             subject = f"{cant_alertas} Nuevas oportunidades"
             send_email(subject, body_html, sender, recipients, password)
 
@@ -269,12 +271,12 @@ def main():
         if today_datetime.weekday() == 3:
             print("----Jueves----")
             print("Generando dataFrame con las alertas de esta semana")
-            nuevas_alertas = generate_df_to_fill_body(df, "semanal")
+            nuevas_alertas, msg = generate_df_to_fill_body(df, "semanal")
 
             cant_alertas = len(nuevas_alertas)
             if cant_alertas > 0:
                 print(f"enviando {cant_alertas} alertas")
-                body_html_sem = generate_body(nuevas_alertas)
+                body_html_sem = generate_body(nuevas_alertas, msg)
                 subject = "Resumen de oportunidades semanal"
                 send_email(subject, body_html_sem, sender, recipients, password)
 
@@ -285,12 +287,12 @@ def main():
     #lunes
     elif today_datetime.weekday() == 0:
         print("Generando dataFrame con las alertas del sabado, domingo y lunes")
-        nuevas_alertas = generate_df_to_fill_body(df, "lunes")
+        nuevas_alertas, msg = generate_df_to_fill_body(df, "lunes")
         
         cant_alertas = len(nuevas_alertas)
         if cant_alertas > 0:
             print(f"enviando {cant_alertas} alertas")
-            body_html = generate_body(nuevas_alertas)
+            body_html = generate_body(nuevas_alertas, msg)
             subject = f"{cant_alertas} nuevas oportunidades"
             send_email(subject, body_html, sender, recipients, password)
 

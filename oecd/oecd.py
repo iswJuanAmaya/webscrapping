@@ -62,37 +62,45 @@ def find_new_jobs(tree:html):
         also looks fot the words_to_look in the detail to see if 
         it is an alert
         """
-        #get the url of detail
-        detail_url = 'https://www.oecd.org' + get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/@href')
-        
-        #looks if the detail url is already in the dataset
-        if df['url_detail_id'][df['url_detail_id']==detail_url].any():
-            print('this job is already in the dataset')
+        try:
+            #get the url of detail
+            detail_url = 'https://www.oecd.org' + get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/@href')
+        except Exception as e:
+            print(f"fallo obteniendo el url del detalle con error: \n {e}")
             continue
-        #if not  exist, get the detail
-        else:
-            print('nueva oportunidad encontrada')
-            #type RFQ
-            type_RFQ = get_by_xpath_and_clean(job, './td[2]/text()')
-            #get the title
-            title = get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/text()')
-            #get the location (type RFQ)
-            location = 'N/A'
-            #Opening Date:
-            opening_date = get_by_xpath_and_clean(job, './td[5]/text()')
-            #Closing Date
-            closing_date = get_by_xpath_and_clean(job, './td[6]/text()', i='join')
-            
-            #find the body of the job and look for the words_to_look to appear once at least
-            is_alert = False
+        try:
+            #looks if the detail url is already in the dataset
+            if df['url_detail_id'][df['url_detail_id']==detail_url].any():
+                print('this job is already in the dataset')
+                continue
+            #if not  exist, get the detail
+            else:
+                print('nueva oportunidad encontrada')
+                #type RFQ
+                type_RFQ = get_by_xpath_and_clean(job, './td[2]/text()')
+                #get the title
+                title = get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/text()')
+                #get the location (type RFQ)
+                location = 'N/A'
+                #Opening Date:
+                opening_date = get_by_xpath_and_clean(job, './td[5]/text()')
+                #Closing Date
+                closing_date = get_by_xpath_and_clean(job, './td[6]/text()', i='join')
+                
+                #find the body of the job and look for the words_to_look to appear once at least
+                is_alert = False
 
-            text_for_alert = title.strip().lower()
-            if any(word in text_for_alert for word in words_to_look):
-                is_alert = True
-            #add the new job to the dataset
-            df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
-                    'opening_date': opening_date, 'closing_date': closing_date,'location': location,
+                text_for_alert = title.strip().lower()
+                if any(word in text_for_alert for word in words_to_look):
+                    is_alert = True
+                #add the new job to the dataset
+                df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
+                        'opening_date': opening_date, 'closing_date': closing_date,'location': location,
                     'is_alert': is_alert, 'source': source,'tipo':type_RFQ}, ignore_index=True)
+        
+        except Exception as e:
+            print(f"fallo obteniendo oportunidad {detail_url} con error: \n {e}")
+            continue
 
     df.to_csv(file_name, index=False, encoding='utf-8', header=True)
 
