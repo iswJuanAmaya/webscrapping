@@ -241,7 +241,7 @@ def main():
     
     #--// Corre todos los scrapers //--#
     # 1) itera sobre el diccionario folders, toma la llave como la carpeta, se mueve a ella, ejecuta el script y vuelve a la carpeta raiz
-    #correr_scrapers()
+    correr_scrapers()
 
     #--// Empieza el algoritmo de generacion de alertas y envió de correos //--#
     # 2) corre el script de generacion y envio de alertas

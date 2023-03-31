@@ -176,7 +176,7 @@ def main():
     df = load_csv(file_name)
 
     #paginacion/ infinite scroll down simulation
-    for page in range(0, 6):
+    for page in range(0, 10):
         """ iterates from page 0 to page 5,
         each page has to return a maximum of 15 jobs,
         if it returns less than 10 NEW jobs, it means that 
