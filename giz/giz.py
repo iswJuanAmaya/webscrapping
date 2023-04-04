@@ -25,7 +25,7 @@ def get_page(url:str) -> html:
 
 
 #special function to perform the first request
-def get_main_page(main_url:str)->dict:
+def get_main_page(main_url:str) -> dict:
     """this is a special requests that brings
     all the jobs in the page
     """
