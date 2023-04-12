@@ -11,7 +11,8 @@ def send_email(subject, body, sender, recipients, password):
     msg = MIMEMultipart('alternative')
     msg['Subject'] = subject
     msg['From'] = sender
-    msg['To'] = ', '.join(recipients)
+    msg['To'] = 'dss.tisalud@gmail.com'
+    msg['Cco'] = 'iswjuanamaya@gmail.com,gustavo.gilramos@gmail.com'
 
     # añade @body como el cuerpo del correo, con el html renderizado.
     part2 = MIMEText(body, 'html')  
