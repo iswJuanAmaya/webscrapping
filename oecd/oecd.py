@@ -64,7 +64,7 @@ def find_new_jobs(tree:html):
         """
         try:
             #get the url of detail
-            detail_url = 'https://www.oecd.org' + get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/@href')
+            detail_url = 'https://www.oecd.org' + get_by_xpath_and_clean(job, '(./td[4]/*//a)[1]/@href')
         except Exception as e:
             print(f"fallo obteniendo el url del detalle con error: \n {e}")
             continue
@@ -79,7 +79,7 @@ def find_new_jobs(tree:html):
                 #type RFQ
                 type_RFQ = get_by_xpath_and_clean(job, './td[2]/text()')
                 #get the title
-                title = get_by_xpath_and_clean(job, '(./td[4]/p//a)[1]/text()')
+                title = get_by_xpath_and_clean(job, '(./td[4]/*//a)[1]/text()')
                 #get the location (type RFQ)
                 location = 'N/A'
                 #Opening Date:
@@ -130,6 +130,7 @@ def main():
     today = date.today().strftime("%d/%m/%Y")
     source = 'OECD'
     file_name = '../oportunidades.csv'
+    # file_name = 'oecd_ops.csv'
     main_url = 'https://www.oecd.org/callsfortenders/listofallcallsfortenders.htm'
 
     print("\nCargando el dataset de oportunidades guardadas...")

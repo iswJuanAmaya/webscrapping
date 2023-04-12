@@ -102,35 +102,47 @@ def find_new_jobs(tree:html):
         #if not  exist, get the detail
         else:
             print('nueva oportunidad encontrada, obteniendo detalle...')
-            detail_page = get_page(detail_url)
-            counter += 1
+            try:
+                detail_page = get_page(detail_url)
+                counter += 1
 
-            #get the title
-            title = clean(job['MatchedObjectDescriptor']['PositionTitle'])
-            #get the location
-            location = clean(job['MatchedObjectDescriptor']['PositionLocation'][0]['CityName'])
-            #Opening Date:
-            opening_date = clean(job['MatchedObjectDescriptor']['PublicationChannel'][0]['StartDate'])
-            #Closing Date
-            closing_date = clean(job['MatchedObjectDescriptor']['PublicationEndDate'])
-            
-            #find the body of the job and look for the words_to_look to appear once at least
-            is_alert = False
-            #recolecta 3 divs que contienen el texto de la oportunidad
-            l1 = detail_page.xpath('(//div[@class="panel-body"])[1]/descendant::text()')
-            l2 = detail_page.xpath('(//div[@class="panel-body"])[2]/descendant::text()')
-            l3 = detail_page.xpath('(//div[@class="panel-body"])[3]/descendant::text()')
+                #get the title
+                title = clean(job['MatchedObjectDescriptor']['PositionTitle'])
+                #get the location
+                try:
+                    location = clean(job['MatchedObjectDescriptor']['PositionLocation'][0]['CityName'])
+                except Exception as e:
+                    print(f"no se pudo obtener la ubicacion, error: {e}")
+                    location = None
+                #Opening Date:
+                try:
+                    opening_date = clean(job['MatchedObjectDescriptor']['PublicationChannel'][0]['StartDate'])
+                except Exception as e:
+                    print(f"no se pudo obtener la fecha de apertura, error: {e}")
+                #Closing Date
+                closing_date = clean(job['MatchedObjectDescriptor']['PublicationEndDate'])
+                
+                #find the body of the job and look for the words_to_look to appear once at least
+                is_alert = False
+                #recolecta 3 divs que contienen el texto de la oportunidad
+                l1 = detail_page.xpath('(//div[@class="panel-body"])[1]/descendant::text()')
+                l2 = detail_page.xpath('(//div[@class="panel-body"])[2]/descendant::text()')
+                l3 = detail_page.xpath('(//div[@class="panel-body"])[3]/descendant::text()')
 
-            #une los 3 divs en un solo string, lo limpia y lo convierte a minusculas
-            text_for_alert = re.sub(r'[\n\t\xa0]', '', ' '.join(l1+l2+l3) ).strip().lower()
-            if any(word in text_for_alert for word in words_to_look):
-                is_alert = True
+                #une los 3 divs en un solo string, lo limpia y lo convierte a minusculas
+                text_for_alert = re.sub(r'[\n\t\xa0]', '', ' '.join(l1+l2+l3) ).strip().lower()
+                if any(word in text_for_alert for word in words_to_look):
+                    is_alert = True
 
-            #add the new job to the dataset
-            df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
-                    'opening_date': opening_date, 'closing_date': closing_date,'location': location,
-                    'is_alert':is_alert, 'source': source}, ignore_index=True)
-            
+                #add the new job to the dataset
+                df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
+                        'opening_date': opening_date, 'closing_date': closing_date,'location': location,
+                        'is_alert':is_alert, 'source': source}, ignore_index=True)
+                
+            except Exception as e:
+                print(f"falló obteniendo oportunidad {detail_url} con error: \n {e}")
+                continue
+
         #esto es para evitar hacer más de 30 requests, ya que la pagina nos puede bloquear
         if counter == 30:
             print("30 jobs found, maximum reached, braking.")

@@ -1,5 +1,14 @@
-url_detail_id,scrapped_day,title,opening_date,closing_date,source,is_alert,location
-https://www.oecd.org/callsfortenders/RFQ_646_WEB.pdf,14/03/2023,Maintenance of the canopy glass ceiling Contact: kevin.sejean@oecd.org,06.03.2023,30.03.2023 2.00 pm (Paris time),OECD,False,RFQ_646
-https://www.oecd.org/callsfortenders/RFQ_645_WEB.pdf,14/03/2023,Fire Safety Systems Coordination Contact: kevin.sejean@oecd.org,,30.03.2023 2.00 pm (Paris time),OECD,False,RFQ_645
-https://www.oecd.org/callsfortenders/RFQ_644_WEB.pdf,19/03/2023,Audio Visual services,06.03.2023,03.04.2023 2.00 pm (Paris time),OECD,False,RFQ_644
-https://www.oecd.org/callsfortenders/RFI.pdf,19/03/2023,Request for Information on the Common Transmission System (CTS),13.02.2023,27.03.2023 6.00 pm (Paris time),OECD,False,
+url_detail_id,scrapped_day,title,opening_date,closing_date,source,is_alert,location,tipo
+https://www.oecd.org/callsfortenders/RFQ_646_WEB.pdf,14/03/2023,Maintenance of the canopy glass ceiling Contact: kevin.sejean@oecd.org,06.03.2023,30.03.2023 2.00 pm (Paris time),OECD,False,RFQ_646,
+https://www.oecd.org/callsfortenders/RFQ_645_WEB.pdf,14/03/2023,Fire Safety Systems Coordination Contact: kevin.sejean@oecd.org,,30.03.2023 2.00 pm (Paris time),OECD,False,RFQ_645,
+https://www.oecd.org/callsfortenders/RFQ_644_WEB.pdf,19/03/2023,Audio Visual services,06.03.2023,03.04.2023 2.00 pm (Paris time),OECD,False,RFQ_644,
+https://www.oecd.org/callsfortenders/RFI.pdf,19/03/2023,Request for Information on the Common Transmission System (CTS),13.02.2023,27.03.2023 6.00 pm (Paris time),OECD,False,,
+https://www.oecd.org/callsfortenders/OECD RFQ_652 - Summary.pdf,08/04/2023,Work on the IOMC Toolbox and the OECD ERAT Toolkit,22.03.2023,20.04.2023 2.00 pm (Paris time),OECD,False,,RFQ_652
+https://www.oecd.org/callsfortenders/OECD RFQ_649 - Summary.pdf,08/04/2023,Open and Innovative Governance Consultants,17.03.2023,17.04.2023 6.00 pm (Paris time),OECD,False,,RFQ_649
+https://www.oecd.org/callsfortenders/OECD RFQ_648 - Summary_newdate.pdf,08/04/2023,Service provider for the collection of nationally representative survey responses,20.03.2023,21.04.2023 6.00 pm (Paris time),OECD,False,,RFQ_648
+https://www.oecd.org/callsfortenders/OECD - Summary RFQ 650.pdf,08/04/2023,Layout and type setting of country profiles,17.03.2023,17.04.2023 6.00 pm (Paris time),OECD,False,,RFQ_650
+https://www.oecd.org/callsfortenders/RFQ_655 - OECD WEB.pdf,08/04/2023,Neural machine translation solution and associated services,06.04.2023,03.05.2023 5.00 pm (Paris time),OECD,False,N/A,RFQ_655
+https://www.oecd.org/callsfortenders/EOI_Purchase of certified carbon credits.docx,08/04/2023,Purchase of certified carbon credits,06.04.2023,05.05.2023 6.00 pm (Paris time),OECD,False,N/A,EOI
+https://www.oecd.org/callsfortenders/2023 ASQIIA Project Calls for expression of interest.docx,08/04/2023,Country Consultants for Accelerating and Scaling Up Quality Infrastructure Investment in Africa (ASQIIA) Project,04.04.2023,17.04.2023 10.00 am (Paris time),OECD,False,N/A,EOI
+https://www.oecd.org/callsfortenders/OECD RFQ_647 - Summary.pdf,08/04/2023,Service providers in Data science and Information technology uses and applications to support effective and efficient regulatory delivery,03.04.2023,02.05.2023 6.00 pm (Paris time),OECD,False,N/A,RFQ_647
+https://www.oecd.org/callsfortenders/OECD - Summary RFQ 653.pdf,08/04/2023,"Advice and support on the selection, design and development of a new pension scheme",27.03.2023,27.04.2023 6.00 pm (Paris time),OECD,False,N/A,RFQ_653
