@@ -204,7 +204,7 @@ def correr_scrapers():
 
         print(f"///////////////++++++++++++++++++++++ ejecutando {script} ++++++++++++++++++++++////////////////")
         os.chdir(folder)
-        os.system(f"python {script}")
+        os.system(f"python3 {script}")
         os.chdir("..")  
 
         time.sleep(10)
