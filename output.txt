@@ -4,18 +4,30 @@ Cargando el dataset de oportunidades guardadas...
 Obteniendo la pagina principal...
 
 Buscando nuevas oportunidades...
-103 trabajos encontrados
+104 trabajos encontrados
 this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 9 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 12 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 5 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 10 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 6 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 6 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 7 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 10 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 4 segundos antes del requests
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -113,20 +125,24 @@ Storing the updated dataset...
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 8 segundos antes del requests
+dormirá por 4 segundos antes del requests
 
 Buscando nuevas oportunidades...
 5 trabajos encontrados
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 9 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 12 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada, obteniendo detalle...
+dormirá por 8 segundos antes del requests
 this job is already in the dataset
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 9 segundos antes del requests
+dormirá por 7 segundos antes del requests
 
 Buscando nuevas oportunidades...
 0 trabajos encontrados
@@ -136,14 +152,15 @@ Cargando el dataset de oportunidades guardadas...
 Obteniendo la pagina principal...
 
 Buscando nuevas oportunidades...
-2 trabajos encontrados
+3 trabajos encontrados
+this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 
 Cargando el dataset de oportunidades guardadas...
 Obteniendo pagina 1...
 dormirá por 10 segundos antes del requests
-pidiendo jobs para el día: 30-Jul-2023
+pidiendo jobs para el día: 02-Aug-2023
 
 Buscando nuevas oportunidades. en pagina 1..
 15 trabajos encontrados
@@ -151,27 +168,205 @@ nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
+nueva oportunidad encontrada
 this job is already in the dataset
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
+this job is already in the dataset
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 14 nuevas oportunidades en la pagina 1 se hará un scroll más
+Se encontraron 13 nuevas oportunidades en la pagina 1 se hará un scroll más
 Obteniendo pagina 2...
 dormirá por 10 segundos antes del requests
-pidiendo jobs para el día: 30-Jul-2023
+pidiendo jobs para el día: 02-Aug-2023
 
 Buscando nuevas oportunidades. en pagina 2..
 15 trabajos encontrados
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 2 se hará un scroll más
+Obteniendo pagina 3...
+dormirá por 12 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 3..
+15 trabajos encontrados
+this job is already in the dataset
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 14 nuevas oportunidades en la pagina 3 se hará un scroll más
+Obteniendo pagina 4...
+dormirá por 11 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 4..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 4 se hará un scroll más
+Obteniendo pagina 5...
+dormirá por 9 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 5..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 5 se hará un scroll más
+Obteniendo pagina 6...
+dormirá por 7 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 6..
+15 trabajos encontrados
+this job is already in the dataset
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 14 nuevas oportunidades en la pagina 6 se hará un scroll más
+Obteniendo pagina 7...
+dormirá por 10 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 7..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 7 se hará un scroll más
+Obteniendo pagina 8...
+dormirá por 9 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 8..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 8 se hará un scroll más
+Obteniendo pagina 9...
+dormirá por 11 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 9..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 9 se hará un scroll más
+Obteniendo pagina 10...
+dormirá por 8 segundos antes del requests
+pidiendo jobs para el día: 02-Aug-2023
+
+Buscando nuevas oportunidades. en pagina 10..
+15 trabajos encontrados
+nueva oportunidad encontrada
+nueva oportunidad encontrada
+this job is already in the dataset
+nueva oportunidad encontrada
+nueva oportunidad encontrada
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -182,9 +377,7 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-Se encontraron 3 nuevas oportunidades en la pagina 2 se terminará el scroll
+Se encontraron 4 nuevas oportunidades en la pagina 10 se terminará el scroll
 
 Iniciando driver...
 inicializando driver
@@ -205,11 +398,15 @@ durmiendo 5 segs
 -----next page-----
 durmiendo 5 segs
 -----next page-----
+durmiendo 5 segs
+-----next page-----
 no hay mas paginas
 
 Cargando el dataset de oportunidades guardadas...
 
 Buscando nuevas oportunidades...
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -218,6 +415,14 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 9 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 9 segundos antes del requests
+this job is already in the dataset
+this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 8 segundos antes del requests
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -225,7 +430,21 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 7 segundos antes del requests
 this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
+this job is already in the dataset
+this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 7 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 7 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 11 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -325,15 +544,14 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
-this job is already in the dataset
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 8 segundos antes del requests
+dormirá por 10 segundos antes del requests
 
 Buscando nuevas oportunidades...
-46 trabajos encontrados
+52 trabajos encontrados
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -380,6 +598,18 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 8 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 11 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
+nueva oportunidad encontrada
+dormirá por 4 segundos antes del requests
 ///////////////++++++++++++++++++++++ ejecutando giz.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando idb.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando oecd.py ++++++++++++++++++++++////////////////
@@ -391,4 +621,7 @@ this job is already in the dataset
 ///////////////////////++++++++++++++++++++++ FIN DE LA EJECUCION DE LOS SCRAPPERS ++++++++++++++++++++++////////////////
 --------->>>>>>>>>>> Algoritmo de generacion de alertas......
 leyendo oportunidades guardadas
---> Hoy es fin de semana, no se envian alertas
+Generando dataFrame con las alertas diarias
+generando html para enviar las alertas por correo
+ 0             alertas detectadas en 166 oportunidades minadas
+no hay alertas el día de hoy
