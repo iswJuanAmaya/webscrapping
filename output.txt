@@ -1,70 +1,11 @@
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
 
 Buscando nuevas oportunidades...
-112 trabajos encontrados
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 9 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 9 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 12 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 12 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 6 segundos antes del requests
-this job is already in the dataset
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 8 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 6 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 6 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 9 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
+61 trabajos encontrados
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -127,38 +68,37 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 Storing the updated dataset...
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 9 segundos antes del requests
+dormirá por 12 segundos antes del requests
 
 Buscando nuevas oportunidades...
 5 trabajos encontrados
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 11 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 7 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 5 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 10 segundos antes del requests
 this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 9 segundos antes del requests
+dormirá por 8 segundos antes del requests
 
 Buscando nuevas oportunidades...
 0 trabajos encontrados
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
 
 Buscando nuevas oportunidades...
-7 trabajos encontrados
+8 trabajos encontrados
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -166,11 +106,13 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
+this job is already in the dataset
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 Obteniendo pagina 1...
-dormirá por 8 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
+dormirá por 9 segundos antes del requests
+pidiendo jobs para el día: 17-Mar-2024
 
 Buscando nuevas oportunidades. en pagina 1..
 15 trabajos encontrados
@@ -179,7 +121,6 @@ nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
-this job is already in the dataset
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
@@ -189,193 +130,14 @@ nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
 nueva oportunidad encontrada
-Se encontraron 14 nuevas oportunidades en la pagina 1 se hará un scroll más
+nueva oportunidad encontrada
+Se encontraron 15 nuevas oportunidades en la pagina 1 se hará un scroll más
 Obteniendo pagina 2...
-dormirá por 12 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
+dormirá por 6 segundos antes del requests
+pidiendo jobs para el día: 17-Mar-2024
 
 Buscando nuevas oportunidades. en pagina 2..
 15 trabajos encontrados
-nueva oportunidad encontrada
-this job is already in the dataset
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 14 nuevas oportunidades en la pagina 2 se hará un scroll más
-Obteniendo pagina 3...
-dormirá por 5 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 3..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 3 se hará un scroll más
-Obteniendo pagina 4...
-dormirá por 7 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 4..
-15 trabajos encontrados
-this job is already in the dataset
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 14 nuevas oportunidades en la pagina 4 se hará un scroll más
-Obteniendo pagina 5...
-dormirá por 4 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 5..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 5 se hará un scroll más
-Obteniendo pagina 6...
-dormirá por 8 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 6..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 6 se hará un scroll más
-Obteniendo pagina 7...
-dormirá por 6 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 7..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 7 se hará un scroll más
-Obteniendo pagina 8...
-dormirá por 9 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 8..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 8 se hará un scroll más
-Obteniendo pagina 9...
-dormirá por 4 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 9..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 9 se hará un scroll más
-Obteniendo pagina 10...
-dormirá por 10 segundos antes del requests
-pidiendo jobs para el día: 16-Aug-2023
-
-Buscando nuevas oportunidades. en pagina 10..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -387,7 +149,12 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
-Se encontraron 4 nuevas oportunidades en la pagina 10 se terminará el scroll
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+Se encontraron 0 nuevas oportunidades en la pagina 2 se terminará el scroll
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Iniciando driver...
 inicializando driver
@@ -427,56 +194,59 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
-nueva oportunidad encontrada
-dormirá por 10 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 nueva oportunidad encontrada
-dormirá por 12 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
+dormirá por 7 segundos antes del requests
 this job is already in the dataset
 this job is already in the dataset
 nueva oportunidad encontrada
-dormirá por 5 segundos antes del requests
+dormirá por 11 segundos antes del requests
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -517,6 +287,7 @@ this job is already in the dataset
 this job is already in the dataset
 /home/ec2-user/webscrapping/unops_interns/unops_interns.py:31: DeprecationWarning: executable_path has been deprecated, please pass in a Service object
   driver = webdriver.Chrome(options=chrome_options, executable_path='C:\\chromedriver.exe')
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Iniciando driver...
 inicializando driver
@@ -540,14 +311,23 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
 
 Obteniendo la pagina principal...
-dormirá por 10 segundos antes del requests
+dormirá por 5 segundos antes del requests
 
 Buscando nuevas oportunidades...
-57 trabajos encontrados
+64 trabajos encontrados
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
+this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
@@ -603,11 +383,15 @@ this job is already in the dataset
 this job is already in the dataset
 this job is already in the dataset
 nueva oportunidad encontrada
-dormirá por 6 segundos antes del requests
+dormirá por 5 segundos antes del requests
 nueva oportunidad encontrada
-dormirá por 4 segundos antes del requests
-nueva oportunidad encontrada
-dormirá por 10 segundos antes del requests
+dormirá por 11 segundos antes del requests
+sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
+/home/ec2-user/webscrapping/pipeline.py:267: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df[ 'is_alert'][df[ 'is_alert']=="Request for EOI"] = False
 ///////////////++++++++++++++++++++++ ejecutando giz.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando idb.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando oecd.py ++++++++++++++++++++++////////////////
@@ -619,7 +403,5 @@ dormirá por 10 segundos antes del requests
 ///////////////////////++++++++++++++++++++++ FIN DE LA EJECUCION DE LOS SCRAPPERS ++++++++++++++++++++++////////////////
 --------->>>>>>>>>>> Algoritmo de generacion de alertas......
 leyendo oportunidades guardadas
-Generando dataFrame con las alertas diarias
-generando html para enviar las alertas por correo
- 0             alertas detectadas en 155 oportunidades minadas
-no hay alertas el día de hoy
+Error, el campo 'is_alert' no es booleano, se correra el parche
+--> Hoy es fin de semana, no se envian alertas

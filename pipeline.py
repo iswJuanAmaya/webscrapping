@@ -251,6 +251,22 @@ def main():
     #lee las oportunidades guardadas
     print("leyendo oportunidades guardadas")
     df = pd.read_csv('oportunidades.csv', encoding='utf-8')
+    
+    if (df[ 'is_alert'].dtype == bool) == False: 
+        """Esta serie debe ser booleana, si no es así es porque
+        alguna inserción no se hizo bien y se filtró algún valor
+        erroneo, como no pude replicar el error en tiempo real no he
+        podido hacer un correcto diagnostico y no he podido arreglarlo,
+        parece que algún cáracter de otro pais en UNGM es tomado como
+        "," por pandas, y mueve el layout de salida, transformando esta
+        serie en tipo str y no en booleana, esto hace que falle el algoritmo 
+        de alerta pues busca aquellas cuyo is_alert sea igual a True."""
+
+        print("Error, el campo 'is_alert' no es booleano, se correra el parche")
+
+        df[ 'is_alert'][df[ 'is_alert']=="Request for EOI"] = False
+        df.to_csv('./oportunidades.csv', index=False, encoding='utf-8', header=True)
+        df = pd.read_csv('oportunidades.csv', encoding='utf-8')
 
     #martes, miercoles, jueves y viernes
     if today_datetime.weekday() in [1,2,3,4]:
