@@ -226,7 +226,7 @@ def main():
     global sender, recipients, password, today, today_datetime, folders
     sender = "alquimiadigital23@gmail.com"
     recipients = ["iswjuanamaya@gmail.com", "gustavo.gilramos@gmail.com", "dss.tisalud@gmail.com"]#
-    password = "hfeopmgpccptvste" #"pyfiewjrnjmqtrnl" 
+    password = "vaillidatntojvsc" 
     today_datetime = date.today()
     today = date.today().strftime("%d/%m/%Y")
     folders = {
