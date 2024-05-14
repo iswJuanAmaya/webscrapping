@@ -1,313 +1,123 @@
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/giz/giz.py", line 193, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/giz/giz.py", line 183, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/giz/giz.py", line 58, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Obteniendo la pagina principal...
-
-Buscando nuevas oportunidades...
-55 trabajos encontrados
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 5 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 11 segundos antes del requests
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 5 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-Storing the updated dataset...
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/idb/idb.py", line 156, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/idb/idb.py", line 146, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/idb/idb.py", line 29, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Obteniendo la pagina principal...
-dormirá por 12 segundos antes del requests
-
-Buscando nuevas oportunidades...
-5 trabajos encontrados
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
-
-Cargando el dataset de oportunidades guardadas...
-
-Obteniendo la pagina principal...
-dormirá por 11 segundos antes del requests
-
-Buscando nuevas oportunidades...
-0 trabajos encontrados
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
-
-Cargando el dataset de oportunidades guardadas...
-
-Obteniendo la pagina principal...
-
-Buscando nuevas oportunidades...
-9 trabajos encontrados
-nueva oportunidad encontrada, obteniendo detalle...
-dormirá por 7 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
-Obteniendo pagina 1...
-dormirá por 9 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/oecd/oecd.py", line 147, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/oecd/oecd.py", line 137, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/oecd/oecd.py", line 29, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Buscando nuevas oportunidades. en pagina 1..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 1 se hará un scroll más
-Obteniendo pagina 2...
-dormirá por 9 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
 
-Buscando nuevas oportunidades. en pagina 2..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 2 se hará un scroll más
-Obteniendo pagina 3...
-dormirá por 11 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
+Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/paho/paho.py", line 192, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/paho/paho.py", line 182, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/paho/paho.py", line 86, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Buscando nuevas oportunidades. en pagina 3..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 3 se hará un scroll más
-Obteniendo pagina 4...
-dormirá por 11 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
 
-Buscando nuevas oportunidades. en pagina 4..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 4 se hará un scroll más
-Obteniendo pagina 5...
-dormirá por 5 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
+Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/ungm/ungm.py", line 204, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/ungm/ungm.py", line 179, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/ungm/ungm.py", line 75, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Buscando nuevas oportunidades. en pagina 5..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 5 se hará un scroll más
-Obteniendo pagina 6...
-dormirá por 4 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
-
-Buscando nuevas oportunidades. en pagina 6..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 6 se hará un scroll más
-Obteniendo pagina 7...
-dormirá por 11 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
-
-Buscando nuevas oportunidades. en pagina 7..
-15 trabajos encontrados
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 12 nuevas oportunidades en la pagina 7 se hará un scroll más
-Obteniendo pagina 8...
-dormirá por 9 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
-
-Buscando nuevas oportunidades. en pagina 8..
-15 trabajos encontrados
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-Se encontraron 15 nuevas oportunidades en la pagina 8 se hará un scroll más
-Obteniendo pagina 9...
-dormirá por 6 segundos antes del requests
-pidiendo jobs para el día: 18-Mar-2024
-
-Buscando nuevas oportunidades. en pagina 9..
-15 trabajos encontrados
-this job is already in the dataset
-this job is already in the dataset
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-nueva oportunidad encontrada
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-Se encontraron 8 nuevas oportunidades en la pagina 9 se terminará el scroll
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Iniciando driver...
 inicializando driver
@@ -333,126 +143,30 @@ durmiendo 5 segs
 no hay mas paginas
 
 Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/unops/unops.py", line 202, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/unops/unops.py", line 195, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/unops/unops.py", line 53, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Buscando nuevas oportunidades...
-this job is already in the dataset
-nueva oportunidad encontrada
-dormirá por 6 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-nueva oportunidad encontrada
-dormirá por 7 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-nueva oportunidad encontrada
-dormirá por 9 segundos antes del requests
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
 /home/ec2-user/webscrapping/unops_interns/unops_interns.py:31: DeprecationWarning: executable_path has been deprecated, please pass in a Service object
   driver = webdriver.Chrome(options=chrome_options, executable_path='C:\\chromedriver.exe')
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Iniciando driver...
 inicializando driver
@@ -464,107 +178,52 @@ buscando el boton de paginacion con scroll
 no hay mas paginas
 
 Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/unops_interns/unops_interns.py", line 202, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/unops_interns/unops_interns.py", line 195, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/unops_interns/unops_interns.py", line 53, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Buscando nuevas oportunidades...
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
 
 Cargando el dataset de oportunidades guardadas...
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/wbg/wbg.py", line 141, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/wbg/wbg.py", line 131, in main
+    df = load_csv(file_name)
+  File "/home/ec2-user/webscrapping/wbg/wbg.py", line 29, in load_csv
+    return pd.read_csv(file_name, encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
 
-Obteniendo la pagina principal...
-dormirá por 4 segundos antes del requests
-
-Buscando nuevas oportunidades...
-69 trabajos encontrados
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-this job is already in the dataset
-nueva oportunidad encontrada
-dormirá por 5 segundos antes del requests
-nueva oportunidad encontrada
-dormirá por 4 segundos antes del requests
-nueva oportunidad encontrada
-dormirá por 7 segundos antes del requests
-nueva oportunidad encontrada
-dormirá por 8 segundos antes del requests
-nueva oportunidad encontrada
-dormirá por 11 segundos antes del requests
-sys:1: DtypeWarning: Columns (1,2,3,4,5,6,7,8,9) have mixed types.Specify dtype option on import or set low_memory=False.
-/home/ec2-user/webscrapping/pipeline.py:267: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df[ 'is_alert'][df[ 'is_alert']=="Request for EOI"] = False
 ///////////////++++++++++++++++++++++ ejecutando giz.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando idb.py ++++++++++++++++++++++////////////////
 ///////////////++++++++++++++++++++++ ejecutando oecd.py ++++++++++++++++++++++////////////////
@@ -576,8 +235,23 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 ///////////////////////++++++++++++++++++++++ FIN DE LA EJECUCION DE LOS SCRAPPERS ++++++++++++++++++++++////////////////
 --------->>>>>>>>>>> Algoritmo de generacion de alertas......
 leyendo oportunidades guardadas
-Error, el campo 'is_alert' no es booleano, se correra el parche
-Generando dataFrame con las alertas del sabado, domingo y lunes
-generando html para enviar las alertas por correo
- 0             alertas detectadas en 172 oportunidades minadas
-no hay alertas
+Traceback (most recent call last):
+  File "/home/ec2-user/webscrapping/pipeline.py", line 326, in <module>
+    main()
+  File "/home/ec2-user/webscrapping/pipeline.py", line 253, in main
+    df = pd.read_csv('oportunidades.csv', encoding='utf-8')
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 688, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 460, in _read
+    data = parser.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 1198, in read
+    ret = self._engine.read(nrows)
+  File "/home/ec2-user/.local/lib/python3.9/site-packages/pandas/io/parsers.py", line 2157, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 847, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 862, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 918, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2042, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
+
