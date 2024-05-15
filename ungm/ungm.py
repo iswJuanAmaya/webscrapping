@@ -80,7 +80,7 @@ def get_by_xpath_and_clean(tree:html , xpath:str, i:int=0)->str:
     cleans it from \n, \t and \xa0 """
     try:
         text = tree.xpath(xpath)[i]
-        text = re.sub(r'[\n\t,]', '', text).strip()
+        text = re.sub(r'[\n\t\r,]', '', text).strip()
         return text
     except:
         return None
@@ -136,11 +136,11 @@ def find_new_jobs(tree:html)->int:
                 is_alert = True
             
             if detail_url.startswith("http"):
-            	#add the new job to the dataset
-            	df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
-                    	'opening_date': opening_date, 'closing_date': closing_date,'location': location,
-                    	'is_alert': is_alert, 'source': source,'tipo':type_of_opportunity,
-                    	'reference':reference}, ignore_index=True)
+                #add the new job to the dataset
+                df = df.append({'url_detail_id': detail_url, 'scrapped_day': today,  'title': title, 
+                        'opening_date': opening_date, 'closing_date': closing_date,'location': location,
+                        'is_alert': is_alert, 'source': source,'tipo':type_of_opportunity,
+                        'reference':reference}, ignore_index=True)
             else:
                 print(f"Error {detail_url} no comple con el patron de url de detalle.\n{title}")
 
